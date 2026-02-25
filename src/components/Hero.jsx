@@ -113,7 +113,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="lg:min-h-screen bg-[#D9D9D9] flex flex-col items-center justify-center text-center px-6 py-20 box-border" style={{ 
+    <section className="lg:min-h-screen 2xl:min-h-[60vh] bg-[#D9D9D9] flex flex-col items-center justify-center text-center px-6 py-20 box-border" style={{ 
         background: `url(${background}) center/cover no-repeat, #D9D9D9`
       }}>
       {/* OTP Modal */}

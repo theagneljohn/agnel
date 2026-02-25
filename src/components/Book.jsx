@@ -114,7 +114,7 @@ export default function Book() {
 
   return (
     <div
-      className="min-h-screen w-full flex items-center justify-center pt-6 pb-12 px-4"
+      className=" w-full flex items-center justify-center pt-6 pb-12 px-4"
       style={{ background: "#D9D9D9", fontFamily: "'Poppins', sans-serif" }}
     >
       <div className="w-full max-w-7xl flex flex-col items-center gap-8">

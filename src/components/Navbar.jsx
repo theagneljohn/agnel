@@ -24,7 +24,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 max-w-[90rem] mx-auto">
       {/* Left side - Profile image */}
       <motion.button 
         className="bg-white/40 text-black font-semibold text-sm pl-1 pr-5 py-1 rounded-full shadow-sm hover:shadow-md transition-all flex items-center gap-2 backdrop-blur-sm"

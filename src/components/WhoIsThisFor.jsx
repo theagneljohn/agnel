@@ -203,13 +203,16 @@ export default function WhoIsThisFor() {
         <div className="flex flex-col lg:grid lg:grid-cols-5 lg:gap-8 xl:gap-12 items-center">
           {/* LEFT: title + tabs */}
           <motion.div
-            className="flex flex-col justify-center mb-12 lg:mb-0 lg:col-span-3"
+            className="lg:col-span-3 flex flex-col justify-evenly h-full"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={contentVariants}
           >
-            <motion.h2
+            <motion.div 
+            className="flex flex-col justify-center mb-12 lg:mb-0"
+            >
+              <motion.h2
               variants={itemVariants}
               className="text-4xl sm:text-5xl md:text-6xl font-medium text-white leading-tight mb-5 tracking-tighter"
             >
@@ -223,6 +226,7 @@ export default function WhoIsThisFor() {
               <br className="hidden lg:block" /> a predictable, scalable
               education business.
             </motion.p>
+            </motion.div>
 
             {/* Tabs */}
             <motion.div
@@ -256,10 +260,11 @@ export default function WhoIsThisFor() {
                 ))}
               </div>
             </motion.div>
+
           </motion.div>
 
           {/* RIGHT: carousel card with controls */}
-          <div className="lg:col-span-2 flex flex-col items-center justify-center">
+          <div className="lg:col-span-2 flex flex-col items-center justify-center mt-5 lg:mt-0">
             <div className="relative w-full max-w-md">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div

@@ -309,7 +309,7 @@ export default function Pricing() {
             backgroundRepeat: "no-repeat",
           }}
         />
-        <div className="pt-20 px-4 text-center m-5 rounded-4xl">
+        <div className="pt-20 relative z-10 px-4 text-center m-5 rounded-4xl">
           <div className="max-w-6xl mx-auto text-cente">
             <div className="flex items-center justify-center gap-4 mb-5">
               <div

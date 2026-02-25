@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import trusted from "../assets/images/trusted.png";
 import OtpModal from "./OtpModel";
+import background from "../assets/images/bg-white.png"
 
 // ─── Replace with your actual course ID from GET /courses ────────────────────
 const COURSE_ID = 1;
@@ -112,7 +113,9 @@ export default function Hero() {
   };
 
   return (
-    <section className="lg:min-h-screen bg-[#D9D9D9] flex flex-col items-center justify-center text-center px-6 py-20 box-border">
+    <section className="lg:min-h-screen bg-[#D9D9D9] flex flex-col items-center justify-center text-center px-6 py-20 box-border" style={{ 
+        background: `url(${background}) center/cover no-repeat, #D9D9D9`
+      }}>
       {/* OTP Modal */}
       {modal && (
         <OtpModal

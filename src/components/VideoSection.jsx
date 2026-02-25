@@ -25,7 +25,7 @@ export default function VideoSection() {
   return (
     <section
       id="about"
-      className="md:pt-16 pb-10 md:pb-16 px-4"
+      className=" pb-10 md:pb-16 px-4"
       style={{ background: "#D9D9D9" }}
     >
       <div className="max-w-6xl mx-auto">

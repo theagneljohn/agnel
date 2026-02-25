@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, Instagram, Linkedin, X, BookOpen, Loader2, ArrowLeft } from "lucide-react";
 import profile from "../assets/images/profile.png";
 import OtpModal from "./OtpModel";
+import background from "../assets/images/bg-white.png"
 
 
 const faqs = [
@@ -298,7 +299,16 @@ export default function Pricing() {
       </section>
 
       {/* ── Final CTA Banner ── */}
-      <section className="bg-[#000000] m-2 rounded-4xl">
+      <section className="bg-[#000000] relative m-2 rounded-4xl">
+         <div
+          className="absolute inset-0 -left-[25rem] -top-[10rem] lg:-left-[10rem] lg:-top-[15rem] opacity-35"
+          style={{
+            backgroundImage: `url(${background})`,
+            backgroundSize: window.innerWidth < 768 ? "auto 80%" : "80% auto", // Height 80% on mobile, width 80% on desktop
+            backgroundPosition: "left top",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
         <div className="pt-20 px-4 text-center m-5 rounded-4xl">
           <div className="max-w-6xl mx-auto text-cente">
             <div className="flex items-center justify-center gap-4 mb-5">

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import noise from "../assets/images/noise.png";
+import background from "../assets/images/bg-white.png"
 
 const tabs = [
   {
@@ -185,12 +186,17 @@ export default function WhoIsThisFor() {
       {/* Background with noise */}
       <div
         className="absolute inset-0 bg-black md:rounded-4xl"
-        style={{
-          backgroundImage: `url(${noise})`,
-          backgroundSize: "cover",
-          backgroundBlendMode: "overlay",
-        }}
       />
+
+  <div
+  className="absolute inset-0 -left-[25rem] -top-[10rem] lg:-left-[10rem] lg:-top-[15rem] opacity-35"
+  style={{
+    backgroundImage: `url(${background})`,
+    backgroundSize: window.innerWidth < 768 ? "auto 80%" : "80% auto", // Height 80% on mobile, width 80% on desktop
+    backgroundPosition: "left top",
+    backgroundRepeat: "no-repeat",
+  }}
+/>
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

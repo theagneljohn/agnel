@@ -121,7 +121,7 @@ export default function Pricing() {
                     {/* Pay Installment (also Regular package) */}
                     <div className="w-full sm:w-auto transform transition-transform duration-400 hover:scale-105 bg-gradient-to-br from-white to-[#d9d3d3] rounded-full p-2 shadow-[0_2px_20px_rgba(0,0,0,0.1)] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.6)]">
                       <button
-                        onClick={() => openPayment("Regular")}
+                        onClick={() => openPayment("Demo")}
                         className="w-full font-sans font-medium text-sm bg-white border-[1.5px] border-black rounded-full py-2 md:py-3 px-7 cursor-pointer flex items-center justify-center gap-2.5 whitespace-nowrap outline-none font-['Inter']"
                       >
                         Pay Installment{" "}

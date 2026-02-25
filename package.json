@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.2.0",
     "axios": "^1.13.5",
+    "cloudinary-video-player": "^3.9.0",
     "framer-motion": "^12.34.3",
     "install": "^0.13.0",
     "lucide-react": "^0.575.0",

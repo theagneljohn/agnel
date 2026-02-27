@@ -42,7 +42,7 @@ export default function OtpModal({ packageType, onClose }) {
       try {
         const res = await fetch(
           `${API_BASE}/courses/details/${COURSE_SLUG}`,
-          { headers: { "x-api-key": API_KEY } }
+          { headers: { "x-api-key": API_KEY }, "Authorization": `Bearer ${API_KEY}`, }
         );
         const data = await res.json();
         if (!res.ok) throw new Error(parseError(data, "Failed to load course"));
@@ -71,6 +71,7 @@ export default function OtpModal({ packageType, onClose }) {
   const headers = {
     "Content-Type": "application/json",
     "x-api-key": API_KEY,
+    "Authorization": `Bearer ${API_KEY}`,
   };
 
   async function handleSendOtp(e) {

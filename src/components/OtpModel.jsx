@@ -40,10 +40,10 @@ export default function OtpModal({ packageType, onClose }) {
   useEffect(() => {
     async function fetchCourse() {
       try {
-        const res = await fetch(
-          `${API_BASE}/courses/details/${COURSE_SLUG}`,
-          { headers: { "x-api-key": API_KEY }, "Authorization": `Bearer ${API_KEY}`, }
-        );
+        const res = await fetch(`${API_BASE}/courses/details/${COURSE_SLUG}`, {
+          headers: { "x-api-key": API_KEY },
+          Authorization: `Bearer ${API_KEY}`,
+        });
         const data = await res.json();
         if (!res.ok) throw new Error(parseError(data, "Failed to load course"));
 
@@ -71,7 +71,7 @@ export default function OtpModal({ packageType, onClose }) {
   const headers = {
     "Content-Type": "application/json",
     "x-api-key": API_KEY,
-    "Authorization": `Bearer ${API_KEY}`,
+    Authorization: `Bearer ${API_KEY}`,
   };
 
   async function handleSendOtp(e) {
@@ -155,6 +155,14 @@ export default function OtpModal({ packageType, onClose }) {
       // Shape: { data: { message, data: { redirectUrl, packageId } } }
       const url = data?.data?.data?.redirectUrl;
       window.location.href = url || "https://app.agneljohn.in";
+
+      // Direct redirect based on packageType
+      // const redirectUrl =
+      //   packageType === "Regular"
+      //     ? "https://app.agneljohn.in/course/checkout/2"
+      //     : "https://app.agneljohn.in/course/checkout/3";
+
+      // window.location.href = redirectUrl;
     } catch (err) {
       setErrorMsg(err.message);
       setStep("error");
@@ -237,7 +245,11 @@ export default function OtpModal({ packageType, onClose }) {
                 disabled={loading || !email}
                 className="mt-4 w-full bg-black/90 text-white rounded-2xl py-3.5 font-['Inter'] text-sm font-medium flex items-center justify-center gap-2 hover:bg-black transition-all backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? <Loader2 size={16} className="animate-spin" /> : "Send OTP →"}
+                {loading ? (
+                  <Loader2 size={16} className="animate-spin" />
+                ) : (
+                  "Send OTP →"
+                )}
               </button>
             </form>
           )}
@@ -247,7 +259,10 @@ export default function OtpModal({ packageType, onClose }) {
             <form onSubmit={handleVerifyOtp}>
               <button
                 type="button"
-                onClick={() => { setStep("email"); setErrorMsg(""); }}
+                onClick={() => {
+                  setStep("email");
+                  setErrorMsg("");
+                }}
                 className="flex items-center gap-1 text-black/50 text-xs mb-4 hover:text-black/80 transition-colors font-['Inter']"
               >
                 <ArrowLeft size={13} /> Back
@@ -258,14 +273,18 @@ export default function OtpModal({ packageType, onClose }) {
               <p className="text-black/60 text-sm mb-1 font-['Inter'] font-light">
                 We sent a 6-digit OTP to
               </p>
-              <p className="text-black/90 text-sm font-medium mb-5 font-['Inter']">{email}</p>
+              <p className="text-black/90 text-sm font-medium mb-5 font-['Inter']">
+                {email}
+              </p>
               <input
                 type="text"
                 inputMode="numeric"
                 maxLength={6}
                 placeholder="000000"
                 value={otp}
-                onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                onChange={(e) =>
+                  setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))
+                }
                 className="w-full bg-white/40 backdrop-blur-sm border border-white/50 rounded-2xl px-5 py-3.5 text-black/90 placeholder:text-black/30 text-xl font-bold tracking-[0.35em] text-center outline-none focus:outline-none focus:ring-2 focus:ring-black/30 transition-all"
                 autoFocus
               />
@@ -279,7 +298,11 @@ export default function OtpModal({ packageType, onClose }) {
                 disabled={loading || otp.length !== 6 || !courseId}
                 className="mt-4 w-full bg-black/90 text-white rounded-2xl py-3.5 font-['Inter'] text-sm font-medium flex items-center justify-center gap-2 hover:bg-black transition-all backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? <Loader2 size={16} className="animate-spin" /> : "Verify & Continue →"}
+                {loading ? (
+                  <Loader2 size={16} className="animate-spin" />
+                ) : (
+                  "Verify & Continue →"
+                )}
               </button>
               <button
                 type="button"
@@ -294,10 +317,18 @@ export default function OtpModal({ packageType, onClose }) {
 
           {/* ── NAME/PHONE STEP (new users only) ── */}
           {step === "name" && (
-            <form onSubmit={(e) => { e.preventDefault(); doLogin(); }}>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                doLogin();
+              }}
+            >
               <button
                 type="button"
-                onClick={() => { setStep("otp"); setErrorMsg(""); }}
+                onClick={() => {
+                  setStep("otp");
+                  setErrorMsg("");
+                }}
                 className="flex items-center gap-1 text-black/50 text-xs mb-4 hover:text-black/80 transition-colors font-['Inter']"
               >
                 <ArrowLeft size={13} /> Back
@@ -322,7 +353,9 @@ export default function OtpModal({ packageType, onClose }) {
                   type="tel"
                   placeholder="Phone number (10 digits)"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 15))}
+                  onChange={(e) =>
+                    setPhone(e.target.value.replace(/\D/g, "").slice(0, 15))
+                  }
                   className="w-full bg-white/40 backdrop-blur-sm border border-white/50 rounded-2xl px-5 py-3.5 text-black/90 placeholder:text-black/40 text-sm font-['Inter'] outline-none focus:outline-none focus:ring-2 focus:ring-black/30 transition-all"
                   required
                   minLength={10}
@@ -338,7 +371,11 @@ export default function OtpModal({ packageType, onClose }) {
                 disabled={loading || !name || phone.length < 10}
                 className="mt-4 w-full bg-black/90 text-white rounded-2xl py-3.5 font-['Inter'] text-sm font-medium flex items-center justify-center gap-2 hover:bg-black transition-all backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? <Loader2 size={16} className="animate-spin" /> : "Complete Enrollment →"}
+                {loading ? (
+                  <Loader2 size={16} className="animate-spin" />
+                ) : (
+                  "Complete Enrollment →"
+                )}
               </button>
             </form>
           )}
@@ -367,7 +404,11 @@ export default function OtpModal({ packageType, onClose }) {
               </p>
               <p className="text-black/60 text-sm font-['Inter']">{errorMsg}</p>
               <button
-                onClick={() => { setStep("email"); setErrorMsg(""); setOtp(""); }}
+                onClick={() => {
+                  setStep("email");
+                  setErrorMsg("");
+                  setOtp("");
+                }}
                 className="text-sm text-black/70 underline hover:text-black/90 font-['Inter'] hover:no-underline transition-colors"
               >
                 Try again

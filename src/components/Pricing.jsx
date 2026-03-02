@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, Instagram, Linkedin, X, BookOpen, Loader2, ArrowLeft } from "lucide-react";
+import {
+  Check,
+  Instagram,
+  Linkedin,
+  X,
+  BookOpen,
+  Loader2,
+  ArrowLeft,
+} from "lucide-react";
 import profile from "../assets/images/profile.png";
 import OtpModal from "./OtpModel";
-import background from "../assets/images/bg-white.png"
-
+import background from "../assets/images/bg-white.png";
 
 const faqs = [
   { q: "Who is this program for?" },
@@ -46,13 +53,28 @@ function PlusIcon({ isOpen }) {
       className="flex-shrink-0 ml-4 w-5 h-5 flex items-center justify-center"
     >
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-        <line x1="9" y1="2" x2="9" y2="16" stroke="#e53e3e" strokeWidth="2.2" strokeLinecap="round" />
-        <line x1="2" y1="9" x2="16" y2="9" stroke="#e53e3e" strokeWidth="2.2" strokeLinecap="round" />
+        <line
+          x1="9"
+          y1="2"
+          x2="9"
+          y2="16"
+          stroke="#e53e3e"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+        />
+        <line
+          x1="2"
+          y1="9"
+          x2="16"
+          y2="9"
+          stroke="#e53e3e"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+        />
       </svg>
     </motion.div>
   );
 }
-
 
 // ─── Main Component ────────────────────────────────────────────────────────────
 export default function Pricing() {
@@ -67,7 +89,11 @@ export default function Pricing() {
   }
 
   return (
-    <div id="pricing" className="bg-[#D9D9D9] pb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
+    <div
+      id="pricing"
+      className="bg-[#D9D9D9] pb-2"
+      style={{ fontFamily: "'Poppins', sans-serif" }}
+    >
       {/* ── OTP Modal ── */}
       {modal && (
         <OtpModal
@@ -96,13 +122,14 @@ export default function Pricing() {
               <div className="flex flex-col lg:flex-row">
                 {/* ── Full Access ── */}
                 <div className="flex-1 p-7">
-                  <p className="text-black mb-4 font-light text-2xl">One-time payment</p>
+                  <p className="text-black mb-4 font-light text-2xl">
+                    One-time payment
+                  </p>
                   <p className="font-extrabold font-['Inter'] text-black text-4xl md:text-7xl mb-1 italic tracking-tighter">
                     ₹2,999/-
                   </p>
                   <p className="text-gray-400 text-xs md:text-base font-light mt-2 mb-5">
-                    You can also pay in 2 easy{" "}
-                    <span className="font-normal text-black">installments of ₹1,499.</span>
+                    Access the full course & the benefits below.
                   </p>
 
                   <div className="flex gap-1 md:gap-3 mb-6 flex-col sm:flex-row">
@@ -113,7 +140,11 @@ export default function Pricing() {
                         className="w-full font-sans font-normal text-sm text-white/60 bg-gradient-to-b from-[#2c2c2c] to-[#111] border-none rounded-full md:py-3 py-2 px-7 cursor-pointer flex items-center justify-center gap-2.5 whitespace-nowrap shadow-[inset_0_-16px_48px_#000,0_24px_75px_rgba(0,0,0,0.18)] outline-none font-['Inter']"
                       >
                         Get Full access{" "}
-                        <motion.span className="text-[17px] inline-block" variants={arrowVariants} animate="animate">
+                        <motion.span
+                          className="text-[17px] inline-block"
+                          variants={arrowVariants}
+                          animate="animate"
+                        >
                           →
                         </motion.span>
                       </button>
@@ -126,7 +157,11 @@ export default function Pricing() {
                         className="w-full font-sans font-medium text-sm bg-white border-[1.5px] border-black rounded-full py-2 md:py-3 px-7 cursor-pointer flex items-center justify-center gap-2.5 whitespace-nowrap outline-none font-['Inter']"
                       >
                         Pay Installment{" "}
-                        <motion.span className="text-[17px] inline-block" variants={arrowVariants} animate="animate">
+                        <motion.span
+                          className="text-[17px] inline-block"
+                          variants={arrowVariants}
+                          animate="animate"
+                        >
                           →
                         </motion.span>
                       </button>
@@ -145,8 +180,14 @@ export default function Pricing() {
                       "Schedule 1:1 Call with Agnel John (45 min)",
                       "Full Course Access",
                     ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600 md:text-xl">
-                        <Check size={15} className="text-black flex-shrink-0 mt-2" />
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-gray-600 md:text-xl"
+                      >
+                        <Check
+                          size={15}
+                          className="text-black flex-shrink-0 mt-2"
+                        />
                         {item}
                       </li>
                     ))}
@@ -159,22 +200,34 @@ export default function Pricing() {
 
                 {/* ── Pre-Enrollment ── */}
                 <div className="flex-1 p-7">
-                  <p className="text-black mb-4 font-light text-2xl">Pre-Enrollment Access</p>
+                  <p className="text-black mb-4 font-light text-2xl">
+                    Get the Book Alone
+                  </p>
                   <p className="font-extrabold font-['Inter'] text-black text-4xl md:text-7xl mb-1 italic tracking-tighter">
-                    ₹499
+                    ₹699
                   </p>
                   <p className="text-gray-400 text-xs md:text-base font-light mt-2 mb-5">
-                    Try before you commit. 7 Days Refund Policy
+                    Position your course as the Only Choice
                   </p>
 
                   <div className="flex gap-3 mb-6 flex-col sm:flex-row">
                     <div className="w-full sm:w-auto transform transition-transform duration-400 hover:scale-105 bg-gradient-to-br from-white to-[#d9d3d3] rounded-full p-2 shadow-[0_2px_20px_rgba(0,0,0,0.1)] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.6)]">
                       <button
-                        onClick={() => openPayment("Demo")}
+                        onClick={() => {
+                          window.open(
+                            "https://payments.cashfree.com/forms/onlychoicebook",
+                            "_blank",
+                            "noopener,noreferrer",
+                          );
+                        }}
                         className="w-full font-sans font-normal text-sm text-white/60 bg-gradient-to-b from-[#2c2c2c] to-[#111] border-none rounded-full md:py-3 py-2 px-7 cursor-pointer flex items-center justify-center gap-2.5 whitespace-nowrap shadow-[inset_0_-16px_48px_#000,0_24px_75px_rgba(0,0,0,0.18)] outline-none font-['Inter']"
                       >
-                        PreBook & Explore{" "}
-                        <motion.span className="text-[17px] inline-block" variants={arrowVariants} animate="animate">
+                        Get the Book Now{" "}
+                        <motion.span
+                          className="text-[17px] inline-block"
+                          variants={arrowVariants}
+                          animate="animate"
+                        >
                           →
                         </motion.span>
                       </button>
@@ -186,12 +239,18 @@ export default function Pricing() {
                   </p>
                   <ul className="space-y-2.5">
                     {[
-                      "Module 1 (4 Lessons) Access",
-                      "Get 1st Chapter of Only Choice Book",
-                      "Upgrade anytime",
+                      "Physical Copy of the Book",
+                      "Door Delivery",
+                      "E-Book for Quick Reference",
                     ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600 md:text-xl">
-                        <Check size={15} className="text-black flex-shrink-0 mt-2" />
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-gray-600 md:text-xl"
+                      >
+                        <Check
+                          size={15}
+                          className="text-black flex-shrink-0 mt-2"
+                        />
                         {item}
                       </li>
                     ))}
@@ -210,7 +269,9 @@ export default function Pricing() {
             <h2 className="text-black font-medium text-3xl md:text-5xl mb-3 tracking-tight">
               Your Questions, Answered
             </h2>
-            <p className="text-gray-500 text-xl md:text-2xl font-normal">Clear answers. No confusion.</p>
+            <p className="text-gray-500 text-xl md:text-2xl font-normal">
+              Clear answers. No confusion.
+            </p>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start mt-10 md:mt-20">
@@ -224,7 +285,9 @@ export default function Pricing() {
                     className="w-20 h-20 rounded-full object-cover shadow-[0_10px_30px_rgba(0,0,0,0.15)]"
                   />
                   <div>
-                    <p className="font-bold text-xl text-black mb-4">Have more questions?</p>
+                    <p className="font-bold text-xl text-black mb-4">
+                      Have more questions?
+                    </p>
                     <p className="text-gray-700 leading-relaxed font-light max-w-md hidden md:block">
                       Email to my team, get response in 24 to 48 hours
                     </p>
@@ -237,11 +300,15 @@ export default function Pricing() {
                 <div className="flex gap-3 mb-6">
                   <div className="w-full cursor-pointer text-white/60 hover:text-white bg-gradient-to-br from-white to-[#d9d3d3] rounded-full p-2 shadow-[0_2px_20px_rgba(0,0,0,0.1)] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.6)] transform transition-all duration-400">
                     <a
-                      href="mailto:agnel@agneljohn.in"
+                      href="mailto:agneljohn.in@gmail.com"
                       className="w-full font-sans font-normal text-sm bg-gradient-to-b from-[#2c2c2c] to-[#111] border-none rounded-full md:py-3 py-2 px-7 cursor-pointer flex items-center justify-center gap-2.5 whitespace-nowrap shadow-[inset_0_-16px_48px_#000,0_24px_75px_rgba(0,0,0,0.18)] outline-none font-['Inter']"
                     >
                       Email Your Questions Now{" "}
-                      <motion.span className="text-[17px] inline-block" variants={arrowVariants} animate="animate">
+                      <motion.span
+                        className="text-[17px] inline-block"
+                        variants={arrowVariants}
+                        animate="animate"
+                      >
                         →
                       </motion.span>
                     </a>
@@ -249,9 +316,14 @@ export default function Pricing() {
                 </div>
 
                 <div className="ml-3 flex md:gap-6 items-center text-sm">
-                  <span className="text-gray-500 font-light hidden md:block">email us at</span>
-                  <a href="mailto:agnel@agneljohn.in" className="text-[#ff3b00] font-light hover:underline">
-                    agnel@agneljohn.in
+                  <span className="text-gray-500 font-light hidden md:block">
+                    email us at
+                  </span>
+                  <a
+                    href="mailto:agneljohn.in@gmail.com"
+                    className="text-[#ff3b00] font-light hover:underline"
+                  >
+                    agneljohn.in@gmail.com
                   </a>
                 </div>
               </div>
@@ -260,7 +332,10 @@ export default function Pricing() {
             {/* RIGHT — FAQ Accordion */}
             <div className="w-full lg:w-[55%]">
               {faqs.map((faq, i) => (
-                <div key={i} className="border-t border-gray-400 last:border-b border-gray-400">
+                <div
+                  key={i}
+                  className="border-t border-gray-400 last:border-b border-gray-400"
+                >
                   <button
                     className="w-full flex items-center justify-between py-6 bg-none border-none cursor-pointer text-left font-['Inter']"
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
@@ -300,7 +375,7 @@ export default function Pricing() {
 
       {/* ── Final CTA Banner ── */}
       <section className="bg-[#000000] relative m-2 rounded-4xl">
-         <div
+        <div
           className="absolute inset-0 -left-[25rem] -top-[10rem] lg:-left-[10rem] lg:-top-[15rem] opacity-35"
           style={{
             backgroundImage: `url(${background})`,
@@ -314,7 +389,10 @@ export default function Pricing() {
             <div className="flex items-center justify-center gap-4 mb-5">
               <div
                 className="h-[3.5px] w-16"
-                style={{ background: "linear-gradient(to left, rgba(255,255,255,0.5), transparent)" }}
+                style={{
+                  background:
+                    "linear-gradient(to left, rgba(255,255,255,0.5), transparent)",
+                }}
               />
               <span
                 style={{
@@ -330,7 +408,10 @@ export default function Pricing() {
               </span>
               <div
                 className="h-[3.5px] w-16"
-                style={{ background: "linear-gradient(to right, rgba(255,255,255,0.5), transparent)" }}
+                style={{
+                  background:
+                    "linear-gradient(to right, rgba(255,255,255,0.5), transparent)",
+                }}
               />
             </div>
 
@@ -341,7 +422,8 @@ export default function Pricing() {
 
             <p className="text-white/70 text-sm md:text-2xl mb-8 leading-relaxed mx-auto">
               Join course creators who are using a clear, repeatable{" "}
-              <br className="hidden md:block" /> system to grow their education business with confidence
+              <br className="hidden md:block" /> system to grow their education
+              business with confidence
             </p>
 
             <div className="flex justify-center gap-4 mb-8 flex-col sm:flex-row">
@@ -352,7 +434,11 @@ export default function Pricing() {
                   className="w-full font-['Inter'] text-sm md:text-base text-white/80 bg-gradient-to-b from-[#2c2c2c] to-[#111] rounded-full py-3 px-8 cursor-pointer flex items-center justify-center gap-3 shadow-[inset_0_-12px_30px_#000] transition-all duration-400"
                 >
                   Enroll Now{" "}
-                  <motion.span className="text-lg inline-block" variants={arrowVariants} animate="animate">
+                  <motion.span
+                    className="text-lg inline-block"
+                    variants={arrowVariants}
+                    animate="animate"
+                  >
                     →
                   </motion.span>
                 </button>
@@ -361,11 +447,21 @@ export default function Pricing() {
               {/* Explore Prebook → Demo */}
               <div className="w-full sm:w-auto group transform transition-all duration-400 hover:scale-105 bg-gradient-to-br from-white to-[#e5e5e5] rounded-full p-[6px] shadow-[0_4px_25px_rgba(0,0,0,0.15)]">
                 <button
-                  onClick={() => openPayment("Demo")}
+                  onClick={() => {
+                    window.open(
+                      "https://payments.cashfree.com/forms/onlychoicebook",
+                      "_blank",
+                      "noopener,noreferrer",
+                    );
+                  }}
                   className="w-full font-['Inter'] text-sm md:text-base bg-white border border-gray-200 rounded-full py-3 px-8 cursor-pointer flex items-center justify-center gap-3 transition-all duration-400"
                 >
-                  Explore Prebook{" "}
-                  <motion.span className="text-lg inline-block" variants={arrowVariants} animate="animate">
+                  Get the Book Now{" "}
+                  <motion.span
+                    className="text-lg inline-block"
+                    variants={arrowVariants}
+                    animate="animate"
+                  >
                     →
                   </motion.span>
                 </button>

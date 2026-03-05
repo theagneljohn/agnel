@@ -424,8 +424,6 @@ export default function Navbar() {
     }
   };
 
-  const displayName = user?.firstName || user?.name?.split(" ")[0] || "Agnel John";
-  const avatarSrc = user?.image || profile;
 
   // Don't render anything while checking session to prevent flash
   if (isLoading) {
@@ -442,7 +440,7 @@ export default function Navbar() {
           whileTap={{ scale: 0.95 }}
         >
           <img
-            src={avatarSrc}
+            src={profile}
             alt="Profile"
             className="w-9 h-9 rounded-full object-cover"
             onError={(e) => {

@@ -129,6 +129,24 @@ export default function OtpModal({ packageType, onClose }) {
       if (!token) throw new Error("No token returned");
 
       setAuthCookie(token);
+      
+       // Fetch profile
+    const profileRes = await fetch(`${API_BASE}/user/my-profile`, {
+      headers: {
+        "x-api-key": API_KEY,
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!profileRes.ok) {
+      throw new Error("Failed to fetch profile");
+    }
+
+    const profileData = await profileRes.json();
+    const userProfile = profileData?.data;
+
+    localStorage.setItem("userProfile", JSON.stringify(userProfile));
+
       await generatePaymentLink(token);
     } catch (err) {
       setErrorMsg(err.message);

@@ -5,7 +5,6 @@ import OtpModal from "./OtpModel";
 import background from "../assets/images/bg-white.png"
 
 // ─── Replace with your actual course ID from GET /courses ────────────────────
-const COURSE_ID = 1;
 
 function RollingDigit({ digit }) {
   const [current, setCurrent] = useState(digit);
@@ -120,7 +119,6 @@ export default function Hero() {
       {modal && (
         <OtpModal
           packageType={modal.packageType}
-          courseId={COURSE_ID}
           onClose={() => setModal(null)}
         />
       )}
@@ -147,12 +145,14 @@ export default function Hero() {
               <RollingNumber value={count10} />
             </span>
           </Badge>
-          <br className="md:hidden" />
+         <div className="w-full md:hidden"></div>
 
           <span className="font-['Poppins'] font-medium text-black/50 text-[clamp(2.2rem,6.4vw,100px)] leading-[1.28] tracking-[-0.05em] whitespace-nowrap">
             Crore
           </span>
         </div>
+
+        <div className="w-full md:hidden h-1.5"></div>
 
         {/* Row 2 — "in [03] years." */}
         <div className="flex flex-wrap items-center justify-center gap-[clamp(6px,1vw,14px)]">

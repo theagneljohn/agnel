@@ -3,8 +3,6 @@ import { ChevronUp, ChevronDown, Video, BookOpen, FileText } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion";
 import OtpModal from "./OtpModel";
 
-// ─── Replace with your actual course ID from GET /courses ────────────────────
-const COURSE_ID = 1;
 
 const modules = [
   {
@@ -120,7 +118,6 @@ export default function Curriculum() {
       {modal && (
         <OtpModal
           packageType={modal.packageType}
-          courseId={COURSE_ID}
           onClose={() => setModal(null)}
         />
       )}

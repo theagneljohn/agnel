@@ -163,6 +163,8 @@ export default function OtpModal({ packageType, onClose }) {
       //     : "https://app.agneljohn.in/course/checkout/3";
 
       // window.location.href = redirectUrl;
+
+      setLoading(false)
     } catch (err) {
       setErrorMsg(err.message);
       setStep("error");

@@ -81,11 +81,8 @@ export default function Pricing() {
   const [openFaq, setOpenFaq] = useState(null);
   const [modal, setModal] = useState(null); // { packageType, courseId }
 
-  // NOTE: Replace COURSE_ID with your actual course ID from the API
-  const COURSE_ID = 1;
-
   function openPayment(packageType) {
-    setModal({ packageType, courseId: COURSE_ID });
+    setModal({ packageType });
   }
 
   return (
@@ -98,7 +95,6 @@ export default function Pricing() {
       {modal && (
         <OtpModal
           packageType={modal.packageType}
-          courseId={modal.courseId}
           onClose={() => setModal(null)}
         />
       )}

@@ -39,7 +39,7 @@ export default function Testimonials() {
           <img src={ticker} alt="icon" />
         </div>
 
-        <div className=" bg-black backdrop-blur-sm rounded-2xl p-4 mb-10 md:hidden">
+        <div className=" bg-black backdrop-blur-sm rounded-2xl px-4 py-7 mb-10 md:hidden">
           <StarRow className={"text-2xl"} />
           <p className="text-white text-base leading-relaxed mb-5">
             I admire the way Agnel built Error Makes Clever. I joined his
